@@ -9,7 +9,9 @@ class TestCheckout():
         assert solution.checkout("AAABCD") == 195
         assert solution.checkout("AAABBCD") == 210
         assert solution.checkout("AAAABBCD") == 260
-        assert solution.checkout("AAAAAABBBB") == 350
+        assert solution.checkout("AAAAAABBBB") == 340
+        assert solution.checkout("EEB") == 80
+        assert solution.checkout("AAAAAAAA") == 330
         assert solution.checkout("abcd") == -1
         assert solution.checkout("ABCd") == -1
         assert solution.checkout("ABCDe") == -1

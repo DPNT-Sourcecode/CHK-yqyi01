@@ -68,7 +68,7 @@ class CheckoutSolution:
             if remaining >= special_qty:
                 num_specials = remaining // special_qty
                 total += num_specials * special_price
-                remaining = remaining & special_qty
+                remaining = remaining % special_qty
                 
         total += remaining * price
         return total
