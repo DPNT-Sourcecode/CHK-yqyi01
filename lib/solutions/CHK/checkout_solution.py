@@ -27,7 +27,9 @@ class CheckoutSolution:
         "B": [(2, 45)]
     }
     
-    cross_item_offers
+    cross_item_offers_map = {
+        "E": [(2, "B", 1)]
+    }
     
     
     # skus = unicode string
@@ -39,9 +41,14 @@ class CheckoutSolution:
         total_price = 0
         sku_counter = Counter(skus)
             
-        for sku, count in sku_counter.items():
+        for sku in set(skus):
             if sku not in self.item_price_map:
-                return -1
+                return -1    
+        
+        for trigger_sku, offers in self.cross_item_offers_map.items():
+            num_triggers = sku_counter.get(trigger_sku, 0)
+        
+        for sku, count in sku_counter.items():
             total_price += self._calculate_sku_price(sku, count)
         
         return total_price
@@ -54,4 +61,5 @@ class CheckoutSolution:
             num_specials = count // special_count
             remainder = count % special_count
             return num_specials*special_price + remainder*self.item_price_map[sku]
+
 
