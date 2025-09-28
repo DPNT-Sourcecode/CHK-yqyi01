@@ -104,6 +104,20 @@ class CheckoutSolution:
                 num_targets = sku_counter.get(target_sku, 0)
                 num_free = (num_triggers // trigger_qty) * free_qty
                 sku_counter[target_sku] = max(num_targets - num_free, 0)
+                
+        group_offer_items = []
+        for sku, count in sku_counter.items():
+            if sku in self.multi_buy_set:
+                group_offer_items.extend([sku] * count)
+        
+        group_offer_items.sort(key=lambda sku: self.item_price_map[sku], reverse=True)
+        
+        num_bundles = len(group_offer_items) // 3
+        total_price += num_bundles * 45
+        
+        items_in_bundles = group_offer_items[:num_bundles * 3]
+        for sku in items_in_bundles:
+            sku_counter[sku] -= 1
         
         for sku, count in sku_counter.items():
             total_price += self._calculate_sku_price(sku, count)
@@ -125,6 +139,7 @@ class CheckoutSolution:
                 
         total += remaining * price
         return total
+
 
 
 

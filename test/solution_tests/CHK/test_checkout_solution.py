@@ -13,7 +13,7 @@ class TestCheckout:
         assert solution.checkout("H") == 10
         assert solution.checkout("I") == 35
         assert solution.checkout("J") == 60
-        assert solution.checkout("K") == 80
+        assert solution.checkout("K") == 70
         assert solution.checkout("L") == 90
         assert solution.checkout("M") == 15
         assert solution.checkout("N") == 40
@@ -76,3 +76,4 @@ class TestCheckout:
         assert solution.checkout("1") == -1
         assert solution.checkout("A1B") == -1
         assert solution.checkout("") == 0
+
