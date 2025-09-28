@@ -4,25 +4,27 @@ from collections import Counter
 class CheckoutSolution:
     """
     Our price table and offers:
-    +------+-------+----------------+
-    | Item | Price | Special offers |
-    +------+-------+----------------+
-    | A    | 50    | 3A for 130     |
-    | B    | 30    | 2B for 45      |
-    | C    | 20    |                |
-    | D    | 15    |                |
-    +------+-------+----------------+
+    +------+-------+------------------------+
+    | Item | Price | Special offers         |
+    +------+-------+------------------------+
+    | A    | 50    | 3A for 130, 5A for 200 |
+    | B    | 30    | 2B for 45              |
+    | C    | 20    |                        |
+    | D    | 15    |                        |
+    | E    | 40    | 2E get one B free      |
+    +------+-------+------------------------+
     """
     item_price_map = {
             "A" : 50,
             "B": 30,
             "C": 20,
-            "D": 15
+            "D": 15,
+            "E": 40
         }
         
     item_specials_map = {
-        "A": [3, 130],
-        "B": [2, 45]
+        "A": [(5, 200), (3, 130)]
+        "B": [(2, 45)]
     }
     
     
