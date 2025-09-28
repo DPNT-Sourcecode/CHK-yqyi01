@@ -83,7 +83,7 @@ class CheckoutSolution:
         "U": [(4, "U", 1)]
     }
     
-    multi_buy_set = set(["S", "T", "X", "Y", "Z")
+    multi_buy_set = set(["S", "T", "X", "Y", "Z"])
     
     # skus = unicode string
     def checkout(self, skus: str) -> int:
@@ -93,10 +93,12 @@ class CheckoutSolution:
         
         total_price = 0
         sku_counter = Counter(skus)
-            
+        
+        
+        
         for sku in set(skus):
             if sku not in self.item_price_map:
-                return -1    
+                return -1
         
         for trigger_sku, offers in self.cross_item_offers_map.items():
             num_triggers = sku_counter.get(trigger_sku, 0)
@@ -125,4 +127,5 @@ class CheckoutSolution:
                 
         total += remaining * price
         return total
+
 
