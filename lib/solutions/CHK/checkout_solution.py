@@ -20,7 +20,8 @@ class CheckoutSolution:
             "B": 30,
             "C": 20,
             "D": 15,
-            "E": 40
+            "E": 40,
+            "F": 10
         }
         
     item_specials_map = {
@@ -30,7 +31,7 @@ class CheckoutSolution:
     
     cross_item_offers_map = {
         "E": [(2, "B", 1)],
-        "F": [(2, "F", 1)]
+        "F": [(3, "F", 1)]
     }
     
     
