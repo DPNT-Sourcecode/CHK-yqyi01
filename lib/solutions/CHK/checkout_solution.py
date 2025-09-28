@@ -15,10 +15,24 @@ class CheckoutSolution:
     # skus = unicode string
     def checkout(self, skus: str) -> int:
         
-        item
+        item_price_map = {
+            "A" : 50,
+            "B": 30,
+            "C": 20,
+            "D": 15
+        }
         
+        item_specials_map = {
+            "A": [3, 150],
+            "B": [2, 45]
+        }
+        
+        for sku in skus:
+            if 
+            
         
         raise NotImplementedError()
         
+
 
 
