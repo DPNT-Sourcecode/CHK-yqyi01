@@ -13,19 +13,17 @@ class CheckoutSolution:
     | D    | 15    |                |
     +------+-------+----------------+
     """
-    def __init__(self):
-        
-        self.item_price_map = {
-                "A" : 50,
-                "B": 30,
-                "C": 20,
-                "D": 15
-            }
-            
-        self.item_specials_map = {
-            "A": [3, 130],
-            "B": [2, 45]
+    item_price_map = {
+            "A" : 50,
+            "B": 30,
+            "C": 20,
+            "D": 15
         }
+        
+    item_specials_map = {
+        "A": [3, 130],
+        "B": [2, 45]
+    }
     
     
     # skus = unicode string
@@ -54,4 +52,5 @@ class CheckoutSolution:
             price += count*self.item_price_map[sku]
         
         return price
+
 

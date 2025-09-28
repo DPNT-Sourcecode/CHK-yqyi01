@@ -1,21 +1,18 @@
 from solutions.CHK.checkout_solution import CheckoutSolution
 import pytest
 
-class TestSum():
-    def test_sum(self):
-        assert CheckoutSolution.checkout(self, "ABCD") == 115
-        assert CheckoutSolution.checkout(self, "AABCD") == 165
-        assert CheckoutSolution.checkout(self, "AAABCD") == 195
-        assert CheckoutSolution.checkout(self, "AAABBCD") == 210
-        assert CheckoutSolution.checkout(self, "AAAABBCD") == 260
-        assert CheckoutSolution.checkout(self, "AAAAAABBBB") == 350
-        assert CheckoutSolution.checkout(self, "abcd") == -1
-        assert CheckoutSolution.checkout(self, "ABCd") == -1
-        assert CheckoutSolution.checkout(self, "ABCDe") == -1
-        
-        
-        
-        
-        
+class TestCheckout():
+    def test_checkout(self):
+        solution = CheckoutSolution()
+        assert solution.checkout(self, "ABCD") == 115
+        assert solution.checkout(self, "AABCD") == 165
+        assert solution.checkout(self, "AAABCD") == 195
+        assert solution.checkout(self, "AAABBCD") == 210
+        assert solution.checkout(self, "AAAABBCD") == 260
+        assert solution.checkout(self, "AAAAAABBBB") == 350
+        assert solution.checkout(self, "abcd") == -1
+        assert solution.checkout(self, "ABCd") == -1
+        assert solution.checkout(self, "ABCDe") == -1
+
 
 
