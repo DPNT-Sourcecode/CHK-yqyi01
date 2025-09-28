@@ -46,20 +46,6 @@ class CheckoutSolution:
             special_count, special_price = self.item_specials_map[sku]
             num_specials = count // special_count
             remainder = count % special_count
-            return num_specials*special_price + remainder*price
-        
-        
-        
-        # if sku in self.item_specials_map:
-        #         special_count, special_price = self.item_specials_map[sku]
-        #         remaining_count = count
-        #         while remaining_count >= special_count:
-        #             price += special_price
-        #             remaining_count -= special_count
-        #         price += remaining_count*self.item_price_map[sku]
-        # else:
-        #     price += count*self.item_price_map[sku]
-        
-        return price
+            return num_specials*special_price + remainder*self.item_price_map[sku]
 
 
