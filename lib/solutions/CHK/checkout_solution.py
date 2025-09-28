@@ -94,8 +94,6 @@ class CheckoutSolution:
         total_price = 0
         sku_counter = Counter(skus)
         
-        
-        
         for sku in set(skus):
             if sku not in self.item_price_map:
                 return -1
@@ -127,5 +125,6 @@ class CheckoutSolution:
                 
         total += remaining * price
         return total
+
 
 
