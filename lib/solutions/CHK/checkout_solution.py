@@ -40,18 +40,11 @@ class CheckoutSolution:
                 special_count, special_price = item_specials_map[sku]
                 remaining_count = count
                 while remaining_count >= special_count:
-                    price = special_price
-                    price += remaining_count*item_price_map[sku]
-                    total_price += price
-                    remaining_count - special_count
-                    
+                    total_price += special_price
+                    remaining_count -= special_count
                 total_price += remaining_count*item_price_map[sku]
             else:
                 total_price += count*item_price_map[sku]
         
         return total_price
-                    
 
-chkout = CheckoutSolution()
-price = chkout.checkout("AAAAAA")
-print(price)

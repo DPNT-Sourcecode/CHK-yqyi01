@@ -8,8 +8,14 @@ class TestSum():
         assert CheckoutSolution.checkout(self, "AAABCD") == 195
         assert CheckoutSolution.checkout(self, "AAABBCD") == 210
         assert CheckoutSolution.checkout(self, "AAAABBCD") == 260
-        assert CheckoutSolution.checkout(self, "AAAAAA") == 260
+        assert CheckoutSolution.checkout(self, "AAAAAABBBB") == 350
+        assert CheckoutSolution.checkout(self, "abcd") == -1
+        assert CheckoutSolution.checkout(self, "ABCd") == -1
+        assert CheckoutSolution.checkout(self, "ABCDe") == -1
         
         
         
+        
+        
+
 
