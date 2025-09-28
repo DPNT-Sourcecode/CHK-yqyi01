@@ -30,7 +30,7 @@ class CheckoutSolution:
     def checkout(self, skus: str) -> int:
         
         if not skus:
-            return -1
+            return 0
         
         total_price = 0
         sku_counter = Counter(skus)
@@ -50,6 +50,3 @@ class CheckoutSolution:
             num_specials = count // special_count
             remainder = count % special_count
             return num_specials*special_price + remainder*self.item_price_map[sku]
-
-
-

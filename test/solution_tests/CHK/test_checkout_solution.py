@@ -13,6 +13,3 @@ class TestCheckout():
         assert solution.checkout("abcd") == -1
         assert solution.checkout("ABCd") == -1
         assert solution.checkout("ABCDe") == -1
-
-
-

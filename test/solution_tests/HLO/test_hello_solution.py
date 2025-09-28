@@ -7,4 +7,3 @@ class TestHLO():
         
         with pytest.raises(TypeError):
             HelloSolution.hello(self, 1)
-
