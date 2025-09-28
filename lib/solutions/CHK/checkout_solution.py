@@ -47,6 +47,10 @@ class CheckoutSolution:
         
         for trigger_sku, offers in self.cross_item_offers_map.items():
             num_triggers = sku_counter.get(trigger_sku, 0)
+            for trigger_qty, target_sku, free_qty in offers:
+                num_targets = sku_counter.get(target_sku, 0)
+                num_free = (num_triggers // trigger_qty) * free_qty
+                sku_counter[target_sku] = max(num_targets - num_free, 0)
         
         for sku, count in sku_counter.items():
             total_price += self._calculate_sku_price(sku, count)
@@ -54,12 +58,16 @@ class CheckoutSolution:
         return total_price
                 
     def _calculate_sku_price(self, sku: str, count: int) -> int:
-        if sku not in self.item_specials_map:
-            return count * self.item_price_map[sku]
-        else:
-            special_count, special_price = self.item_specials_map[sku]
-            num_specials = count // special_count
-            remainder = count % special_count
-            return num_specials*special_price + remainder*self.item_price_map[sku]
+        price = self.item_price_map[sku]
+        specials = self.item_specials_map.get(sku, [])
+        
+        
+        # if sku not in self.item_specials_map:
+        #     return count * self.item_price_map[sku]
+        # else:
+        #     special_count, special_price = self.item_specials_map[sku]
+        #     num_specials = count // special_count
+        #     remainder = count % special_count
+        #     return num_specials*special_price + remainder*self.item_price_map[sku]
 
 
