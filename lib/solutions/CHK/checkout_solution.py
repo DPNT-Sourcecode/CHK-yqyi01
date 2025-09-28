@@ -23,9 +23,11 @@ class CheckoutSolution:
         }
         
     item_specials_map = {
-        "A": [(5, 200), (3, 130)]
+        "A": [(5, 200), (3, 130)],
         "B": [(2, 45)]
     }
+    
+    cross_item_offers
     
     
     # skus = unicode string
@@ -52,3 +54,4 @@ class CheckoutSolution:
             num_specials = count // special_count
             remainder = count % special_count
             return num_specials*special_price + remainder*self.item_price_map[sku]
+
