@@ -38,13 +38,14 @@ class CheckoutSolution:
                 return -1
             if sku in item_specials_map:
                 special_count, special_price = item_specials_map[sku]
-                if count >= special_count:
-                    remaining_count = count - special_count
+                remaining_count = count
+                while remaining_count >= special_count:
                     price = special_price
                     price += remaining_count*item_price_map[sku]
-                else:
-                    price = count*item_price_map[sku]
-                total_price += price
+                    total_price += price
+                    remaining_count - special_count
+                    
+                total_price += remaining_count*item_price_map[sku]
             else:
                 total_price += count*item_price_map[sku]
         
@@ -52,5 +53,5 @@ class CheckoutSolution:
                     
 
 chkout = CheckoutSolution()
-price = chkout.checkout("AAAABBCD")
+price = chkout.checkout("AAAAAA")
 print(price)
