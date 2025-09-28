@@ -76,5 +76,3 @@ class TestCheckout:
         assert solution.checkout("1") == -1
         assert solution.checkout("A1B") == -1
         assert solution.checkout("") == 0
-
-

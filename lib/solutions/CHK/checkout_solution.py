@@ -69,7 +69,7 @@ class CheckoutSolution:
         "A": [(5, 200), (3, 130)],
         "B": [(2, 45)],
         "H": [(10, 80), (5, 45)],
-        "K": [(2, 150)],
+        "K": [(2, 120)],
         "P": [(5, 200)],
         "Q": [(3, 80)],
         "V": [(3, 130), (2, 90)]
@@ -148,9 +148,3 @@ class CheckoutSolution:
                 
         total += remaining * price
         return total
-
-
-
-
-
-
