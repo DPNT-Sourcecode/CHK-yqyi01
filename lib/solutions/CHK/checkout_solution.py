@@ -55,14 +55,14 @@ class CheckoutSolution:
             "P": 50,
             "Q": 30,
             "R": 50,
-            "S": 30,
+            "S": 20,
             "T": 20,
             "U": 40,
             "V": 50,
             "W": 20,
-            "X": 90,
-            "Y": 10,
-            "Z": 50
+            "X": 17,
+            "Y": 20,
+            "Z": 21
         }
         
     item_specials_map = {
@@ -105,6 +105,11 @@ class CheckoutSolution:
                 num_free = (num_triggers // trigger_qty) * free_qty
                 sku_counter[target_sku] = max(num_targets - num_free, 0)
                 
+        
+        return total_price
+                
+                
+    def _apply_group_offer(self, sku_counter: Counter) -> int:
         group_offer_items = []
         for sku, count in sku_counter.items():
             if sku in self.multi_buy_set:
@@ -121,8 +126,6 @@ class CheckoutSolution:
         
         for sku, count in sku_counter.items():
             total_price += self._calculate_sku_price(sku, count)
-        
-        return total_price
                 
     def _calculate_sku_price(self, sku: str, count: int) -> int:
         price = self.item_price_map[sku]
@@ -139,6 +142,7 @@ class CheckoutSolution:
                 
         total += remaining * price
         return total
+
 
 
 

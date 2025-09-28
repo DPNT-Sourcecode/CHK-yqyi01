@@ -65,7 +65,7 @@ class TestCheckout:
         solution = CheckoutSolution()
         # buy any 3 of (S,T,X,Y,Z) for 45
         assert solution.checkout("STX") == 45
-        assert solution.checkout("STXYZ") == 90
+        assert solution.checkout("STXYZ") == 82
         assert solution.checkout("SSS") == 45
         assert solution.checkout("SST") == 45
         assert solution.checkout("SXYZ") == 62  # 3 for 45, 1X left at 17
@@ -76,4 +76,5 @@ class TestCheckout:
         assert solution.checkout("1") == -1
         assert solution.checkout("A1B") == -1
         assert solution.checkout("") == 0
+
 
