@@ -1,3 +1,5 @@
+from collections import Counter
+
 
 class CheckoutSolution:
     """
@@ -27,12 +29,15 @@ class CheckoutSolution:
             "B": [2, 45]
         }
         
-        for sku in skus:
-            if 
+        sku_counter = Counter(skus)
             
+        for sku in sku  
         
         raise NotImplementedError()
         
+
+chkout = CheckoutSolution()
+chkout.checkout("abcde")
 
 
 
