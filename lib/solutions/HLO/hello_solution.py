@@ -7,5 +7,3 @@ class HelloSolution:
         return "Hello, World!"
     
     
-
-
