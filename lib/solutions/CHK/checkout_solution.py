@@ -61,13 +61,16 @@ class CheckoutSolution:
         price = self.item_price_map[sku]
         specials = self.item_specials_map.get(sku, [])
         
+        total = 0
+        remaining = count
         
-        # if sku not in self.item_specials_map:
-        #     return count * self.item_price_map[sku]
-        # else:
-        #     special_count, special_price = self.item_specials_map[sku]
-        #     num_specials = count // special_count
-        #     remainder = count % special_count
-        #     return num_specials*special_price + remainder*self.item_price_map[sku]
+        for special_qty, special_price in specials:
+            if remaining >= special_qty:
+                num_specials = remaining // special_qty
+                total += num_specials * special_price
+                remaining = remaining & special_qty
+                
+        total += remaining * price
+        return total
 
 
