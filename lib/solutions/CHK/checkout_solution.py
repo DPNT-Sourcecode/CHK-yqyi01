@@ -31,13 +31,16 @@ class CheckoutSolution:
         
         sku_counter = Counter(skus)
             
-        for sku in sku  
-        
-        raise NotImplementedError()
+        for sku, count in sku_counter.items():
+            if sku not in item_price_map:
+                return -1
+            
+            
         
 
 chkout = CheckoutSolution()
-chkout.checkout("abcde")
+price = chkout.checkout("abaacdef")
+print(price)
 
 
 
