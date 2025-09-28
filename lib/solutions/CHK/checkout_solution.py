@@ -74,7 +74,7 @@ class CheckoutSolution:
         "Q": [(3, 80)],
         "V": [(3, 130), (2, 90)]
     }
-    
+
     cross_item_offers_map = {
         "E": [(2, "B", 1)],
         "F": [(3, "F", 1)],
@@ -83,6 +83,7 @@ class CheckoutSolution:
         "U": [(4, "U", 1)]
     }
     
+    multi_buy_set = set(["S", "T", "X", "Y", "Z")
     
     # skus = unicode string
     def checkout(self, skus: str) -> int:
@@ -124,3 +125,4 @@ class CheckoutSolution:
                 
         total += remaining * price
         return total
+
