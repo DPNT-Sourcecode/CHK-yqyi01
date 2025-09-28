@@ -39,16 +39,20 @@ class CheckoutSolution:
             if sku in item_specials_map:
                 special_count, special_price = item_specials_map[sku]
                 if count >= special_count:
-                    
+                    remaining_count = count - special_count
+                    price = special_price
+                    price += remaining_count*item_price_map[sku]
+                else:
+                    price += count*item_price_map[sku]
+                total_price += price
+            else:
+                total_price += count*item_price_map[sku]
+                
                     
             
             
         
 
 chkout = CheckoutSolution()
-price = chkout.checkout("abaacdef")
+price = chkout.checkout("ABCD")
 print(price)
-
-
-
-

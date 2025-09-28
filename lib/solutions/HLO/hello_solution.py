@@ -7,4 +7,3 @@ class HelloSolution:
         return message
     
     
-
