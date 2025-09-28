@@ -15,7 +15,7 @@ class TestCheckout():
         assert solution.checkout("AAAAAAAA") == 330
         assert solution.checkout("FF") == 20
         assert solution.checkout("FFF") == 20
-        assert solution.checkout("AAAAAAAABBBB") == 330
+        assert solution.checkout("AAAAAAAABBBBFFF") == 440
         assert solution.checkout("abcd") == -1
         assert solution.checkout("ABCd") == -1
         assert solution.checkout("ABCDe") == -1
