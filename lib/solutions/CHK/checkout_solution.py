@@ -27,7 +27,7 @@ class CheckoutSolution:
         }
         
         item_specials_map = {
-            "A": [3, 150],
+            "A": [3, 130],
             "B": [2, 45]
         }
         
@@ -43,16 +43,14 @@ class CheckoutSolution:
                     price = special_price
                     price += remaining_count*item_price_map[sku]
                 else:
-                    price += count*item_price_map[sku]
+                    price = count*item_price_map[sku]
                 total_price += price
             else:
                 total_price += count*item_price_map[sku]
-                
-                    
-            
-            
         
+        return total_price
+                    
 
 chkout = CheckoutSolution()
-price = chkout.checkout("ABCD")
+price = chkout.checkout("AAAABBCD")
 print(price)
