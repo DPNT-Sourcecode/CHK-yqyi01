@@ -40,16 +40,25 @@ class CheckoutSolution:
         return total_price
                 
     def _calculate_sku_price(self, sku: str, count: int) -> int:
-        price = 0
-        if sku in self.item_specials_map:
-                special_count, special_price = self.item_specials_map[sku]
-                remaining_count = count
-                while remaining_count >= special_count:
-                    price += special_price
-                    remaining_count -= special_count
-                price += remaining_count*self.item_price_map[sku]
+        if sku not in self.item_specials_map:
+            return count * self.item_price_map[sku]
         else:
-            price += count*self.item_price_map[sku]
+            special_count, special_price = self.item_specials_map[sku]
+            num_specials = count // special_count
+            remainder = count % special_count
+            return num_specials*special_price + remainder*price
+        
+        
+        
+        # if sku in self.item_specials_map:
+        #         special_count, special_price = self.item_specials_map[sku]
+        #         remaining_count = count
+        #         while remaining_count >= special_count:
+        #             price += special_price
+        #             remaining_count -= special_count
+        #         price += remaining_count*self.item_price_map[sku]
+        # else:
+        #     price += count*self.item_price_map[sku]
         
         return price
 
