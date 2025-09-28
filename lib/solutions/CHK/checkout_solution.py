@@ -124,4 +124,3 @@ class CheckoutSolution:
                 
         total += remaining * price
         return total
-
