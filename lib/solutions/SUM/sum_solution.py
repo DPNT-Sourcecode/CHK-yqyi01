@@ -6,7 +6,3 @@ class SumSolution:
             raise ValueError("Input values must be between 0 and 100.")
         
         return (x + y)
-
-
-
-

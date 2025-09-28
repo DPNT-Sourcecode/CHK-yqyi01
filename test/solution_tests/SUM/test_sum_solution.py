@@ -11,8 +11,3 @@ class TestSum():
             SumSolution().compute(-1, 50)
             SumSolution().compute(-1, 101)
             SumSolution().compute(1, 101)
-
-
-
-
-
