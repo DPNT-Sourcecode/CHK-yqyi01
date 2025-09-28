@@ -12,6 +12,7 @@ class CheckoutSolution:
     | C    | 20    |                        |
     | D    | 15    |                        |
     | E    | 40    | 2E get one B free      |
+    | F    | 10    | 2F get one F free      |
     +------+-------+------------------------+
     """
     item_price_map = {
@@ -28,7 +29,8 @@ class CheckoutSolution:
     }
     
     cross_item_offers_map = {
-        "E": [(2, "B", 1)]
+        "E": [(2, "B", 1)],
+        "F": [(2, "F", 1)]
     }
     
     

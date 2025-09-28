@@ -13,6 +13,8 @@ class TestCheckout():
         assert solution.checkout("EEB") == 80
         assert solution.checkout("AAAAA") == 200
         assert solution.checkout("AAAAAAAA") == 330
+        assert solution.checkout("FF") == 20
+        assert solution.checkout("FFF") == 20
         assert solution.checkout("abcd") == -1
         assert solution.checkout("ABCd") == -1
         assert solution.checkout("ABCDe") == -1
